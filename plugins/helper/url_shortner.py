@@ -50,15 +50,16 @@ async def inline_short(bot, update):
 async def short(link):
     shorten_urls = "**--Shorted URLs--**\n"
     
-    # Bit.ly shorten
-    if FIRE_API:
-        try:
-            s = Shortener(api_key=FIRE_API)
-            url = s.Fire-links.in(link)
-            shorten_urls += f"\n**Fire-links.in :-** {url}"
-        except Exception as error:
-            print(f"Bit.ly error :- {error}")
-
+    try:
+        api_url = "https://Fire-links.in/api"
+        params = {'api': FIRE_API, 'url': link}
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params, raise_for_status=True) as response:
+                data = await response.json()
+                url = data["shortenedUrl"]
+                shorten_urls += f"\n**Fire-links.in :-** {url}"
+    except Exception as error:
+        print(f"Fire-links error :- {error}")
     
     # Send the text
     try:
