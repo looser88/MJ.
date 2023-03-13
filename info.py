@@ -61,7 +61,7 @@ MELCOW_IMG = environ.get('MELCOW_IMG',"https://graph.org/file/5b925763e05d1bf973
 MELCOW_VID = environ.get('MELCOW_VID',"")
 HOW_DWLD_LINK = environ.get('HOW_DWLD_LINK', 'https://t.me/firelinksguide')
 
-IMDB_LINK = environ.get('IMDB_LINK', 'https://imdb.com/find?q={search}')
+IMDB_LINK = environ.get('IMDB_LINK', 'https://imdb.com/find?q={message.from_user}')
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1061576483').split()]
