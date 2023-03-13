@@ -107,6 +107,12 @@ async def gen_link_batch(bot, message):
                     "size": file.file_size,
                     "protect": cmd.lower().strip() == "/pbatch",
                 }
+            if 'is_shortlink' in settings.keys():
+                ENABLE_SHORTLINK = settings['is_shortlink']
+            else:
+                await save_group_settings(query.message.chat.id, 'is_shortlink', False)
+                ENABLE_SHORTLINK = False
+            if ENABLE_SHORTLINK == True:
 
                 og_msg +=1
                 outlist.append(file)
