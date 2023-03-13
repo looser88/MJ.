@@ -497,7 +497,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ 🔥", url=(MAIN_CHANNEL))
+                            InlineKeyboardButton("sᴜʙsᴄʀɪʙᴇ🙂", url=(MAIN_CHANNEL))
                         ]
                     ]
                 )
@@ -527,7 +527,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         reply_markup=InlineKeyboardMarkup(
                             [
                                 [
-                                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ 🔥", url=(MAIN_CHANNEL))
+                                    InlineKeyboardButton("sᴜʙsᴄʀɪʙᴇ🙂", url=(MAIN_CHANNEL))
                                 ]
                             ]
                         )
@@ -774,7 +774,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕️", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
             ],[
             InlineKeyboardButton("🔄 Sʜᴀʀᴇ Mᴇ", url=f'https://t.me/share/url?url=t.me/{temp.U_NAME}'), 
-            InlineKeyboardButton("🤖 Uᴘᴅᴀᴛᴇs", url="https://t.me/muryana_movies")
+            InlineKeyboardButton("🤖 Uᴘᴅᴀᴛᴇs", url="https://t.me/alexa_movies")
             ],[      
             InlineKeyboardButton("❗ Hᴇʟᴘ", callback_data="help2"),
             InlineKeyboardButton("🕵️ Aʙᴏᴜᴛ", callback_data="about")
@@ -855,8 +855,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "updates":
         buttons = [[
-            InlineKeyboardButton('🌿 Sᴜᴘᴘᴏʀᴛ', url='https://t.me/muryana_contact_bot'),
-            InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/muryana_movies')
+            InlineKeyboardButton('🌿 Sᴜᴘᴘᴏʀᴛ', url='https://t.me/AMsupporttbot'),
+            InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs', url='https://t.me/alexa_movies')
             ],[
             InlineKeyboardButton('⟸ ʙᴀᴄᴋ', callback_data='about')
         ]]
@@ -1134,7 +1134,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
     btn.insert(0, 
         [
-            InlineKeyboardButton("🎬 ℍ𝕠𝕨 𝕋𝕠 𝔻𝕠𝕨𝕟𝕝𝕠𝕒𝕕 🎬", url=HOW_DWLD_LINK)
+            InlineKeyboardButton("🔮Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🔮", url=HOW_DWLD_LINK)
         ]
     )
     btn.insert(1, 
