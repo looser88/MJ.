@@ -128,4 +128,4 @@ async def gen_link_batch(bot, message):
     post = await bot.send_document(LOG_CHANNEL, f"batchmode_{message.from_user.id}.json", file_name="Batch.json", caption="⚠️Generated for filestore.")
     os.remove(f"batchmode_{message.from_user.id}.json")
     file_id, ref = unpack_new_file_id(post.document.file_id)
-    await sts.edit(f"Here is your link\nContains `{og_msg}` files.\n https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id} \n\n <code>https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id}</code>.")
+    await sts.edit(f"Here is your link\nContains `{og_msg}` files,\n url=await get_shortlink(query.message.chat.id, f"https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id}")
