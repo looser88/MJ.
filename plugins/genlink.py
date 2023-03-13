@@ -34,16 +34,16 @@ async def gen_link_s(bot, message):
     string = 'filep_' if message.text.lower().strip() == "/plink" else 'file_'
     string += file_id
     outstr = base64.urlsafe_b64encode(string.encode("ascii")).decode().strip("=")
-    await message.reply(f"Here is your Link:\nhttps://t.me/{temp.U_NAME}?start={outstr}")
+    await message.reply(f"Here is your Link:\nhttps://telegram.me/{temp.U_NAME}?start={outstr}")
     
     
 @Client.on_message(filters.command(['batch', 'pbatch']) & filters.create(allowed))
 async def gen_link_batch(bot, message):
     if " " not in message.text:
-        return await message.reply("Use correct format.\nExample <code>/batch https://t.me/cinemala_com1/10 https://t.me/cinemala_com1/20</code>.")
+        return await message.reply("Use correct format.\nExample <code>/batch https://t.me/alexa_movies/10 https://t.me/alexa_movies/20</code>.")
     links = message.text.strip().split(" ")
     if len(links) != 3:
-        return await message.reply("Use correct format.\nExample <code>/batch https://t.me/cinemala_com1/10 https://t.me/cinemala_com1/20</code>.")
+        return await message.reply("Use correct format.\nExample <code>/batch https://t.me/alexa_movies/10 https://t.me/alexa_movies/20</code>.")
     cmd, first, last = links
     regex = re.compile("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")
     match = regex.match(first)
@@ -122,4 +122,4 @@ async def gen_link_batch(bot, message):
     post = await bot.send_document(LOG_CHANNEL, f"batchmode_{message.from_user.id}.json", file_name="Batch.json", caption="⚠️Generated for filestore.")
     os.remove(f"batchmode_{message.from_user.id}.json")
     file_id, ref = unpack_new_file_id(post.document.file_id)
-    await sts.edit(f"Here is your link\nContains `{og_msg}` files.\n https://telegram.me/Alexa_search_bot?start=BATCH-{file_id}")
+    await sts.edit(f"Here is your link\nContains `{og_msg}` files.\n https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id} \n <code>https://telegram.me/{temp.U_NAME}?start=BATCH-{file_id}</code>.")
