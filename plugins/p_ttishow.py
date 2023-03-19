@@ -40,7 +40,7 @@ async def save_group(bot, message):
         await message.reply_photo(
                                   photo=(MELCOW_IMG),
                                   caption=(script.MELCOW_ENG.format(u.mention, message.chat.title),
-                                   reply_markup=InlineKeyboardMarkup(
+                                  reply_markup=InlineKeyboardMarkup(
                                                    [[
                                                       InlineKeyboardButton('❗ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
                                                       InlineKeyboardButton('📢 Updates', url=(MAIN_CHANNEL)
