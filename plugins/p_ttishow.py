@@ -37,15 +37,17 @@ async def save_group(bot, message):
                 pass
             await bot.leave_chat(message.chat.id)
             return
-        buttons = [[
-            InlineKeyboardButton('❗ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('📢 Updates', url=(MAIN_CHANNEL))
-        ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_photo(
                                   photo=(MELCOW_IMG),
                                   caption=(script.MELCOW_ENG.format(u.mention, message.chat.title),
-                                   reply_markup=reply_markup)
+                                   reply_markup=InlineKeyboardMarkup(
+                                                   [[
+                                                      InlineKeyboardButton('❗ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                                                      InlineKeyboardButton('📢 Updates', url=(MAIN_CHANNEL)
+                                                   ]]
+                                       ),
+                                        parse_mode=enums.ParseMode.HTML
+                                       )
 
     else:
         settings = await get_settings(message.chat.id)
