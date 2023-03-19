@@ -36,8 +36,7 @@ async def save_group(bot, message):
             except:
                 pass
             await bot.leave_chat(message.chat.id)
-            return
-        await message.reply_photo(
+            return message.reply_photo(
                                   photo=(MELCOW_IMG),
                                   caption=(script.MELCOW_ENG.format(u.mention, message.chat.title),
                                   reply_markup=InlineKeyboardMarkup(
