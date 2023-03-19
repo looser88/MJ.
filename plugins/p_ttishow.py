@@ -42,9 +42,11 @@ async def save_group(bot, message):
             InlineKeyboardButton('📢 Updates', url=(MAIN_CHANNEL))
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
-            reply_markup=reply_markup)
+        await message.reply_photo(
+                                  photo=(MELCOW_IMG),
+                                  caption=(script.MELCOW_ENG.format(u.mention, message.chat.title),
+                                   reply_markup=reply_markup)
+
     else:
         settings = await get_settings(message.chat.id)
         if settings["welcome"]:
